@@ -69,24 +69,17 @@ class Autocomplete {
 
   getMatches( text ) {
     const option =Array.from(this.input.options);
+    let valuesArray = [];
     for (let i = 0; i < option.length; i++){
+      console.log('',option[i]['textContent'])
       if (option[i]['textContent'].includes(text)){
-        return [
-          {
+          valuesArray.push({
             text: option[i]['textContent'],
             value: option[i].value
-          }
-        ];
-
+          });
       }
     }
-   
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
-      }
-    ];
+    return valuesArray;
   }
 }
 
